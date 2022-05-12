@@ -1,0 +1,23 @@
+{
+  "name": "nodetest",
+  "version": "1.0.0",
+  "description": "Used for storing testing codes for exploring JavaScript.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nesian42ryukaiel/nodetest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nesian42ryukaiel/nodetest/issues"
+  },
+  "homepage": "https://github.com/nesian42ryukaiel/nodetest#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
