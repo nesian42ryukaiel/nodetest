@@ -11,4 +11,4 @@ var person = {
   },
 };
 
-person.printName(); // "jamong"; "Lee" in Node.js
+person.printName(); // "Lee"; "Lee" in Node.js
