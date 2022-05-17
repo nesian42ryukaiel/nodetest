@@ -21,6 +21,9 @@ function solution(n, lost, reserve) {
       } else {
         continue;
       }
+    } else {
+      answer.check[reserve[i]] = true;
+      answer.value++;
     }
   }
   return answer.value;
