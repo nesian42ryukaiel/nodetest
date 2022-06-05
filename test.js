@@ -12,11 +12,19 @@
  * npm test <파일명 이나 경로>를 입력하면 됨
  */
 
+/**
+ * toBe: 원시 타입만 검증
+ */
+
 test("1 is 1", () => {
   expect(1).toBe(1);
 });
 
-// toEqual: 객체 검증
+/**
+ * toEqual: 객체 검증
+ *
+ * 재귀적으로 객체 안의 내용물을 전부 비교하므로 이게 가능함
+ */
 
 function getUser(id) {
   if (id <= 0) throw new Error("Invalid ID"); // toThrow 검증용 라인
@@ -42,14 +50,24 @@ test("return a user object", () => {
   });
 });
 
-// toBeTruthy, toBeFalsy: JS상 모든 타입의 값들을 true 아니면 false 간주하는 규칙에 의거해 판단
+/**
+ * toStrictEqual: toEqual과는 다르게 특정 요소에 undefined가 나오는 것을 허용하지 않음
+ *
+ * 제일 엄격한 test matcher로, 요즘엔 toEqual 대신 이걸 바로 권유하고 있음
+ */
+
+/**
+ * toBeTruthy, toBeFalsy: JS상 모든 타입의 값들을 true 아니면 false 간주하는 규칙에 의거해 판단
+ */
 
 test("number 0 is falsy but string 0 is truthy", () => {
   expect(0).toBeFalsy();
   expect("0").toBeTruthy();
 });
 
-// toHaveLength, toContain: 배열의 길이, 또는 특정 원소 여부를 체크
+/**
+ * toHaveLength, toContain: 배열의 길이, 또는 특정 원소 여부를 체크
+ */
 
 test("array", () => {
   const colors = ["Red", "Yellow", "Blue"];
@@ -58,14 +76,18 @@ test("array", () => {
   expect(colors).not.toContain("Green");
 });
 
-// toMatch: 정규식 기반의 문자열 검증 테스트
+/**
+ * toMatch: 정규식 기반의 문자열 검증 테스트
+ */
 
 test("string", () => {
   expect(getUser(1).email).toBe("user1@test.com");
   expect(getUser(2).email).toMatch(/.*test.com$/);
 });
 
-// toThrow: 예외 발생 여부를 테스트
+/**
+ * toThrow: 예외 발생 여부를 테스트
+ */
 
 // test("throw when id is non negative", () => {
 //   expect(getUser(-1)).toThrow();
