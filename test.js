@@ -56,6 +56,8 @@ test("return a user object", () => {
  * 제일 엄격한 test matcher로, 요즘엔 toEqual 대신 이걸 바로 권유하고 있음
  */
 
+// toBeCloseTo: 근사값을 통과시킴; 소수 연산은 오차 때문에 이걸 요구함
+
 /**
  * toBeTruthy, toBeFalsy: JS상 모든 타입의 값들을 true 아니면 false 간주하는 규칙에 의거해 판단
  */
@@ -64,6 +66,8 @@ test("number 0 is falsy but string 0 is truthy", () => {
   expect(0).toBeFalsy();
   expect("0").toBeTruthy();
 });
+
+// toBeNull 도 존재함
 
 /**
  * toHaveLength, toContain: 배열의 길이, 또는 특정 원소 여부를 체크
@@ -101,3 +105,5 @@ test("throw when id is non negative", () => {
   expect(() => getUser(-1)).toThrow();
   expect(() => getUser(-1)).toThrow("Invalid ID");
 });
+
+// toThrow("상세한 에러 내용") 까지 지정하면 이것까지 match해야 테스트를 통과함
