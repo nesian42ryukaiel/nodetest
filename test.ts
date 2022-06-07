@@ -1,6 +1,9 @@
 test("1 + 1 is 2, even in TypeScript", () => {
   expect(1 + 1).toBe(2);
 });
+test("regex test", () => {
+  expect("Silly names are funny.").toMatch(/name/);
+});
 
 /**
  * 1. Basic Matchers

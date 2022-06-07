@@ -4,7 +4,7 @@
   "description": "Used for storing testing codes for exploring JavaScript.",
   "main": "app.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
