@@ -6,9 +6,9 @@ function quickSort(array, left = 0, right = array.length - 1) {
   quickSort(array, left, partition - 1);
   quickSort(array, partition, right);
   function divide(array, left, right, pivot) {
-    console.log(
-      `array: ${array}, left: ${array[left]}, pivot: ${pivot}, right: ${array[right]}`
-    );
+    // console.log(
+    //   `array: ${array}, left: ${array[left]}, pivot: ${pivot}, right: ${array[right]}`
+    // );
     while (left <= right) {
       while (array[left] < pivot) {
         left++;
