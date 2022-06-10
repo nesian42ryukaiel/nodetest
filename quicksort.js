@@ -29,4 +29,5 @@ function quickSort(array, left = 0, right = array.length - 1) {
   return array;
 }
 
-export default quickSort;
+// export default quickSort;
+module.exports = quickSort;

@@ -1,8 +1,14 @@
+const quickSort = require("./quicksort");
+
 test("1 + 1 is 2, even in TypeScript", () => {
   expect(1 + 1).toBe(2);
 });
 test("regex test", () => {
   expect("Silly names are funny.").toMatch(/name/);
+});
+test("quick sorting", () => {
+  const subject = [1, 9, 2, 8, 3, 7, 4, 6, 5];
+  expect(quickSort(subject)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
 });
 
 /**
