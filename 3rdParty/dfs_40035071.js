@@ -1,22 +1,24 @@
-const Stack = function () {
-  this.items = [];
-};
-Stack.prototype.push = function (obj) {
-  this.items.push(obj);
-};
-Stack.prototype.pop = function () {
-  return this.items.pop();
-};
-Stack.prototype.isEmpty = function () {
-  return this.items.length === 0;
-};
-Stack.prototype.isExplored = function (n) {
-  return this.items.indexOf(n) !== -1;
-};
-Stack.prototype.emptyOut = function () {
-  this.items = [];
-  return this.items.length === 0;
-};
+class Stack {
+  constructor() {
+    this.items = [];
+  }
+  push(obj) {
+    this.items.push(obj);
+  }
+  pop() {
+    return this.items.pop();
+  }
+  isEmpty() {
+    return this.items.length === 0;
+  }
+  isExplored(n) {
+    return this.items.indexOf(n) !== -1;
+  }
+  emptyOut() {
+    this.items = [];
+    return this.items.length === 0;
+  }
+}
 
 const stack = new Stack();
 const adjList = [];
