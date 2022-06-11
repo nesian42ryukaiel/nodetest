@@ -12,7 +12,7 @@ test("quick sorting 1", () => {
 });
 test("quick sorting 2", () => {
   const subject = [1, 9, 2, 8, 3, 7, 4, 6, 5];
-  expect(quickSort(subject, 2, 6)).toEqual([1, 9, 2, 3, 4, 7, 8, 6, 5]);
+  expect(quickSort(subject, 2, 6)).toStrictEqual([1, 9, 2, 3, 4, 7, 8, 6, 5]);
 });
 
 /**
