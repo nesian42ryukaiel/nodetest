@@ -6,9 +6,13 @@ test("1 + 1 is 2, even in TypeScript", () => {
 test("regex test", () => {
   expect("Silly names are funny.").toMatch(/name/);
 });
-test("quick sorting", () => {
+test("quick sorting 1", () => {
   const subject = [1, 9, 2, 8, 3, 7, 4, 6, 5];
   expect(quickSort(subject)).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+});
+test("quick sorting 2", () => {
+  const subject = [1, 9, 2, 8, 3, 7, 4, 6, 5];
+  expect(quickSort(subject, 2, 6)).toEqual([1, 9, 2, 3, 4, 7, 8, 6, 5]);
 });
 
 /**
