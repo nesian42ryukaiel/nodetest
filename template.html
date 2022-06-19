@@ -40,26 +40,47 @@
     <h2>HTML 범용 템플릿</h2>
   </header>
   <nav>
-    <a href="#">North</a>
-    <a href="#">East</a>
-    <a href="#">West</a>
-    <a href="#">South</a>
+    <h2>Navigation Example</h2>
+    <h3>also doubles as unordered list example</h3>
+    <ul>
+      <li><a href="#">North</a></li>
+      <li><a href="#">East</a></li>
+      <li><a href="#">West</a></li>
+      <li><a href="#">South</a></li>
+    </ul>
   </nav>
   <main>
-    <article>
-      <h2>Forecasting of 2022-06-19</h2>
-      <h3>Temperature</h3>
-      <p>It's crazy humid.</p>
-      <h3>Weather</h3>
-      <p>It's jet gray cloudy.</p>
-    </article>
-    <article>
-      <h2>HTML Coding Conventions</h2>
-      <h3>Metadata</h3>
-      <p>Metadata is extremely important. Search engines find your website via your metadata.</p>
-      <h3>Semantic Tags</h3>
-      <p>Semantic tags are best used once per HTML document. Maybe except headers.</p>
-    </article>
+    <div>
+      <h2>Article Example</h2>
+      <article>
+        <h3>Forecasting of 2022-06-19</h3>
+        <h4>Temperature</h4>
+        <p>It's <strong>crazy</strong> humid.</p>
+        <h4>Weather</h4>
+        <p>It's jet gray cloudy.</p>
+      </article>
+      <article>
+        <h3>HTML Coding Conventions</h3>
+        <h4>Metadata</h4>
+        <p>Metadata is extremely important. Search engines find your website via your metadata.</p>
+        <h4>Semantic Tags</h4>
+        <p>Semantic tags are best used once per HTML document. Maybe except headers.</p>
+        <h4>Headline usage</h4>
+        <p>The h1 headline tag is best used <strong>only once per document</strong>. Others can be used at your own
+          leisure.</p>
+        <h4>No infinitely self containing Inline Frames</h4>
+        <p>First of all, most commercial browsers limit this to 1 call. Second, forcing this behavior with JavaScript
+          <del style="color: #808080;">is exciting</del> will most likely make <i>your poor browser</i>
+          <mark>crash</mark>, you monster...
+        </p>
+      </article>
+    </div>
+    <div>
+      <h2>Inline Frame Example</h2>
+      <iframe src="template.html" frameborder="1" width="50%" height="25%" scrolling="yes"></iframe>
+      <p>End of iframe. Also doubles as a test to see how a paragraph tag's content folds inside an inline frame with
+        limited width.</p>
+    </div>
     <div>
       <h2>Table Example</h2>
       <table>
@@ -83,13 +104,18 @@
         </tr>
       </table>
     </div>
-    <div>
-      <h2>Inline Frame Example</h2>
-      <iframe src="template.html" frameborder="1" width="512" height="256" scrolling="yes"></iframe>
-      <p>End of iframe.</p>
-    </div>
   </main>
-  <footer></footer>
+  <footer>
+    <h2>About...</h2>
+    <h3>Webmaster's Profile</h3>
+    <h4>Lucas Yew</h4>
+    <p>A newbie web frontend developer.</p>
+    <h3>Where to Find</h3>
+    <address>
+      Milky Way Galaxy, Solar System, planet Earth,<br />
+      continent of Eurasia, Republic of Korea
+    </address>
+  </footer>
 </body>
 
 </html>
