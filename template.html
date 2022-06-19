@@ -14,10 +14,14 @@
     }
 
     body {
-      background-color: #101010;
-      color: #f0f0f0;
+      background-color: #303030;
+      color: #d0d0d0;
     }
-  </style>
+
+    a {
+      color: gold;
+    }
+  </style> <!-- disable the style tag if you'll use external stylesheet -->
   <!-- <link rel="stylesheet" href="template.css"> -->
   <link rel="apple-touch-icon-precomposed" sizes="57x57" href="favicon/aum_114x114.png">
   <link rel="apple-touch-icon-precomposed" sizes="114x114" href="favicon/aum_114x114.png">
@@ -26,13 +30,65 @@
   <link rel="icon" type="image/vnd.microsoft.icon" sizes="32x32 48x48" href="favicon/aum_032x032.ico">
   <link rel="icon" sizes="128x128" href="favicon/aum_128x128.icns">
   <link rel="icon" href="favicon/aum_032x032.png" type="image/x-icon">
+  <!-- The 32x32 && PNG favicon usually omits size in its file naming -->
   <!-- <script src="template.js"></script> -->
 </head>
 
 <body>
-  <header></header>
-  <nav></nav>
-  <main></main>
+  <header>
+    <h1>HTML General Template</h1>
+    <h2>HTML 범용 템플릿</h2>
+  </header>
+  <nav>
+    <a href="#">North</a>
+    <a href="#">East</a>
+    <a href="#">West</a>
+    <a href="#">South</a>
+  </nav>
+  <main>
+    <article>
+      <h2>Forecasting of 2022-06-19</h2>
+      <h3>Temperature</h3>
+      <p>It's crazy humid.</p>
+      <h3>Weather</h3>
+      <p>It's jet gray cloudy.</p>
+    </article>
+    <article>
+      <h2>HTML Coding Conventions</h2>
+      <h3>Metadata</h3>
+      <p>Metadata is extremely important. Search engines find your website via your metadata.</p>
+      <h3>Semantic Tags</h3>
+      <p>Semantic tags are best used once per HTML document. Maybe except headers.</p>
+    </article>
+    <div>
+      <h2>Table Example</h2>
+      <table>
+        <th>Member</th>
+        <th>Method</th>
+        <tr>
+          <td>Life</td>
+          <td>Create</td>
+        </tr>
+        <tr>
+          <td>Mind</td>
+          <td>Read</td>
+        </tr>
+        <tr>
+          <td>Spirit</td>
+          <td>Update</td>
+        </tr>
+        <tr>
+          <td>Material</td>
+          <td>Delete</td>
+        </tr>
+      </table>
+    </div>
+    <div>
+      <h2>Inline Frame Example</h2>
+      <iframe src="template.html" frameborder="1" width="512" height="256" scrolling="yes"></iframe>
+      <p>End of iframe.</p>
+    </div>
+  </main>
   <footer></footer>
 </body>
 
