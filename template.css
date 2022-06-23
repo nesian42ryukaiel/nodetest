@@ -1,3 +1,8 @@
+.marginBlock {
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+}
+
 body {
   background-color: #303030;
   color: #d0d0d0;
@@ -7,8 +12,12 @@ iframe {
   border: 1px solid;
 }
 
-h1, h2, h3, h4, h5, h6, strong {
+b, h1, h2, h3, h4, h5, h6, strong {
   font-weight: bold;
+}
+
+em, i {
+  font-style: italic;
 }
 
 h1 {
@@ -33,6 +42,14 @@ h5 {
 
 h6 {
   font-size: .67em;
+}
+
+small {
+  font-size: smaller;
+}
+
+strike {
+  text-decoration: line-through;
 }
 
 mark {
