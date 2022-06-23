@@ -3,6 +3,10 @@ body {
   color: #d0d0d0;
 }
 
+iframe {
+  border: 1px solid;
+}
+
 h1, h2, h3, h4, h5, h6, strong {
   font-weight: bold;
 }
@@ -29,6 +33,12 @@ h5 {
 
 h6 {
   font-size: .67em;
+}
+
+mark {
+  background-color: gold;
+  font-weight: bold;
+  padding: 1px;
 }
 
 a {
