@@ -1,4 +1,5 @@
 const quickSort = require("./quicksort");
+const fibonacci = require("./fibonacci");
 
 test("1 + 1 is 2, even in TypeScript", () => {
   expect(1 + 1).toBe(2);
@@ -13,6 +14,12 @@ test("quick sorting 1", () => {
 test("quick sorting 2", () => {
   const subject = [1, 9, 2, 8, 3, 7, 4, 6, 5];
   expect(quickSort(subject, 2, 6)).toStrictEqual([1, 9, 2, 3, 4, 7, 8, 6, 5]);
+});
+test("10th fibonacci is 55", () => {
+  expect(fibonacci(10)).toBe(55);
+});
+test("Wrong fibonacci input", () => {
+  expect(() => fibonacci(0.1)).toThrow();
 });
 
 /**
