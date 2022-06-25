@@ -1,5 +1,6 @@
 const quickSort = require("./quicksort");
 const fibonacci = require("./fibonacci");
+const factorial = require("./factorial");
 
 test("1 + 1 is 2, even in TypeScript", () => {
   expect(1 + 1).toBe(2);
@@ -20,6 +21,9 @@ test("10th fibonacci is 55", () => {
 });
 test("Wrong fibonacci input", () => {
   expect(() => fibonacci(0.1)).toThrow();
+});
+test("10! (factorial) is...", () => {
+  expect(factorial(10)).toBe(3628800);
 });
 
 /**
