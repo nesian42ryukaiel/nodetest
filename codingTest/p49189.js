@@ -69,6 +69,43 @@ function dfs(n, edge) {
   return answer.value;
 }
 
+function bfsThirdParty(start, end, array) {
+  // from https://jacobgrowthstory.tistory.com/90
+  // function solution(n, edge) {return bfsThirdParty(1, n, edge);}
+
+  const isVisited = Array(end + 1).fill(false);
+  const distanceArr = Array(end + 1).fill(0);
+
+  // queue에 start(1번 노드)를 할당하고, 방문 기록을 true로 변경
+  let queue = [start];
+  isVisited[start] = true;
+
+  while (queue.length > 0) {
+    // queue의 0번째 인덱스를 꺼내 head 변수에 할당
+    // 1에서 head까지의 거리에 추가로 1을 더한 뒤 distance 변수에 할당
+    let head = queue.shift();
+    let distance = distanceArr[head] + 1;
+
+    for (let node of array) {
+      // head와 edge로 연결된 노드를 아직 방문하지 않았을 경우, 해당 노드를 방문하고 거리 입력
+      if (node[0] === head && !isVisited[node[1]]) {
+        queue.push(node[1]);
+        isVisited[node[1]] = true;
+        distanceArr[node[1]] = distance;
+      } else if (node[1] === head && !isVisited[node[0]]) {
+        queue.push(node[0]);
+        isVisited[node[0]] = true;
+        distanceArr[node[0]] = distance;
+      }
+    }
+  }
+
+  // 1에서 거리가 최대인 노드의 개수를 리턴
+  let maxDistance = Math.max(...distanceArr);
+  let maxArr = distanceArr.filter((el) => el === maxDistance);
+  return maxArr.length;
+}
+
 let answer = solution(6, [
   [3, 6],
   [4, 3],
