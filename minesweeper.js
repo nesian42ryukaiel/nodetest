@@ -1,4 +1,11 @@
 const setBoard = (w, h) => {
+  if (w > 255 || h > 255) {
+    console.log("Board is too large! A 2x2 board was created instead.");
+    return [
+      [0, 0],
+      [0, 0],
+    ];
+  }
   const board = [];
   for (let i = 0; i < h; i++) {
     let row = [];
@@ -27,18 +34,25 @@ const plantMines = (board, mines, first) => {
   ];
   if (board.length * board[0].length <= mines) {
     console.log("Invalid mine total!");
-    return;
+    return; // or mines = board.length * board[0].length - 1;
   }
   while (minebox.size < mines) {
     let mine = [Math.floor(Math.random() * by), Math.floor(Math.random() * bx)];
     if (mine[0] !== first[0] || mine[1] !== first[1]) {
-      minebox.add(mine);
+      let crypt =
+        mine[0].toString(16).padStart(2, 0) +
+        mine[1].toString(16).padStart(2, 0);
+      minebox.add(crypt);
     }
   }
   console.log(minebox.size, "mines /", mines, "intended");
-  for (let mine of minebox) {
-    console.log(mine);
-    nb[mine[0]][mine[1]] = -9;
+  for (let crypt of minebox) {
+    console.log(crypt);
+    let mine = [
+      parseInt(crypt.substr(0, 2), 16),
+      parseInt(crypt.substr(2, 2), 16),
+    ];
+    nb[mine[0]][mine[1]] = -1;
   }
   for (let i = 0; i < by; i++) {
     for (let j = 0; j < bx; j++) {
@@ -50,7 +64,8 @@ const plantMines = (board, mines, first) => {
             j + dir[k][1] >= 0 &&
             j + dir[k][1] < bx
           ) {
-            if (nb[i + dir[k][0]][j + dir[k][1]] >= 0) nb[i][j]++;
+            if (nb[i + dir[k][0]][j + dir[k][1]] >= 0)
+              nb[i + dir[k][0]][j + dir[k][1]]++;
           }
         }
       }
