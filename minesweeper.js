@@ -91,4 +91,5 @@ for (let row of mf) console.log(row.toString());
  * A more elegant way of making sure the first click won't kill you
  * would be prepping a reserve mine and then swapping out positions
  * if the first click had a mine there.
+ * ...or to follow Windows 8, 9 reserve mines...
  */
