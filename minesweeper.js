@@ -17,7 +17,7 @@ const setBoard = (w, h) => {
   return board;
 };
 
-const plantMines = (board, mines, first) => {
+const setMinefield = (board, mines, first) => {
   const nb = [...board];
   const by = nb.length,
     bx = nb[0].length;
@@ -45,9 +45,9 @@ const plantMines = (board, mines, first) => {
       minebox.add(crypt);
     }
   }
-  console.log(minebox.size, "mines /", mines, "intended");
+  // console.log(minebox.size, "mines /", mines, "intended");
   for (let crypt of minebox) {
-    console.log(crypt);
+    // console.log(crypt);
     let mine = [
       parseInt(crypt.substr(0, 2), 16),
       parseInt(crypt.substr(2, 2), 16),
@@ -71,11 +71,24 @@ const plantMines = (board, mines, first) => {
       }
     }
   }
+  for (let i = 0; i < by; i++) {
+    for (let j = 0; j < bx; j++) {
+      if (nb[i][j] < 0) {
+        nb[i][j] = "B"; // this part is for demonstration
+      }
+    }
+  }
   return nb;
 };
 
-const b = setBoard(7, 7);
-const c = plantMines(b, 7, [3, 3]);
+const b = setBoard(9, 9);
+const mf = setMinefield(b, 13, [9, 9]);
 console.log("----");
-// for (let row of b) console.log(row.length);
-console.log(c);
+for (let row of mf) console.log(row.toString());
+// console.log(c);
+
+/**
+ * A more elegant way of making sure the first click won't kill you
+ * would be prepping a reserve mine and then swapping out positions
+ * if the first click had a mine there.
+ */
