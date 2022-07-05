@@ -1,11 +1,8 @@
 const setBoard = (w, h) => {
-  if (w > 255 || h > 255) {
-    console.log("Board is too large! A 2x2 board was created instead.");
-    return [
-      [0, 0],
-      [0, 0],
-    ];
-  }
+  if (w < 9) w = 9;
+  else if (w > 30) w = 30;
+  if (h < 9) h = 9;
+  else if (h > 30) h = 30;
   const board = [];
   for (let i = 0; i < h; i++) {
     let row = [];
@@ -15,6 +12,33 @@ const setBoard = (w, h) => {
     board.push(row);
   }
   return board;
+};
+
+const setSeed = (y, x, n) => {
+  if (y < 9) y = 9;
+  else if (y > 30) y = 30;
+  if (x < 9) x = 9;
+  else if (x > 30) x = 30;
+  if (n < 10) n = 10;
+  else if (n > 99) n = 99;
+  if (y * x < n + 9) n = y * x - 9;
+  // console.log(y, x, n);
+  const set = new Set();
+  let answer = "";
+  const setlim = n + 9;
+  while (set.size < setlim) {
+    let left = Math.floor(Math.random() * y)
+      .toString(16)
+      .padStart(2, 0);
+    let right = Math.floor(Math.random() * x)
+      .toString(16)
+      .padStart(2, 0);
+    set.add(left + right);
+  }
+  for (let coordinate of set) {
+    answer += coordinate;
+  }
+  return answer;
 };
 
 const setMinefield = (board, mines, first) => {
@@ -45,9 +69,7 @@ const setMinefield = (board, mines, first) => {
       minebox.add(crypt);
     }
   }
-  // console.log(minebox.size, "mines /", mines, "intended");
   for (let crypt of minebox) {
-    // console.log(crypt);
     let mine = [
       parseInt(crypt.substr(0, 2), 16),
       parseInt(crypt.substr(2, 2), 16),
@@ -84,7 +106,8 @@ const setMinefield = (board, mines, first) => {
 const b = setBoard(9, 9);
 const mf = setMinefield(b, 13, [9, 9]);
 console.log("----");
-for (let row of mf) console.log(row.toString());
+// for (let row of mf) console.log(row.toString());
+console.log(setSeed(100, 100, 500));
 // console.log(c);
 
 /**
