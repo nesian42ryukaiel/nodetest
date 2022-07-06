@@ -106,8 +106,8 @@ const setMinefield = (board, mines, first) => {
 const b = setBoard(9, 9);
 const mf = setMinefield(b, 13, [9, 9]);
 console.log("----");
-// for (let row of mf) console.log(row.toString());
-console.log(setSeed(100, 100, 500));
+for (let row of mf) console.log(row.toString());
+// console.log(setSeed(100, 100, 500));
 // console.log(c);
 
 /**
@@ -115,4 +115,14 @@ console.log(setSeed(100, 100, 500));
  * would be prepping a reserve mine and then swapping out positions
  * if the first click had a mine there.
  * ...or to follow Windows 8, 9 reserve mines...
+ */
+
+/**
+ * game pseudocode
+ * 1. set game board, either by preset difficulty or personal preferences
+ * 2. prepare map seed from board size and maximum mines
+ * 3. set board by planting all mines while awaiting for first click
+ * 4. 1) upon first click, empty all mines on the periphery and replace them
+ * 4. 2) then mark all free squares with mine count, and bfs-open all "0's"
+ * 5. a game ends either if all free squares are opened or a mine blows up
  */
